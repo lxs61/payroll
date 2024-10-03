@@ -1,0 +1,448 @@
+<?php
+session_start();
+
+// Check if employee number is set in session
+if(isset($_SESSION['employeeNumber'])) {   
+    $employeeNumber = $_SESSION['employeeNumber'];
+} else {  
+    // Redirect to login page if employee number is not set
+    header("Location: login.php");
+    exit;
+}
+
+// Include database connection
+include('../connection/connection.php');
+
+// Establish database connection
+$con = connection();
+
+// Fetch last name based on employee number
+$empNum = "$employeeNumber"; 
+$sql = "SELECT AccountName FROM employee WHERE employeeNumber = '$empNum'";
+$result = $con->query($sql);
+
+// Check if result is valid
+if ($result->num_rows > 0) {   
+    // Fetch the last name
+    $row = $result->fetch_assoc();
+    $accountName = $row['AccountName'];
+} else {  
+    // Set account name to "Unknown" if not found
+    $accountName = "Unknown";
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Navigation Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-Py3y1jLhnElLa57x6tI6qcSQTRrUNFC82rbV+ZuTdIkXt6x3mLAWlmcaxTf2tuvo" crossorigin="anonymous">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        body, h1, p {
+            margin: 0;
+        }
+
+        
+        .logo {
+            height: 120px;
+            width: 120px;
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .text-container {
+            color: white;
+            margin-top: 30px;
+            margin-left: 20px; 
+        }
+
+        h1 {
+            font-size: 50px;
+            font-family: "Roboto", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        h3 {
+            font-size: 30px;
+            margin-top: 0;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: green;
+            margin: 0;
+            padding: 0;
+            height: 130px;
+            display: flex;
+            align-items: center; 
+            justify-content: space-between; 
+            padding-left: 20px;
+            padding-right: 20px; 
+        }
+
+        .sidebar {
+            background-color: green;
+            width: 295px; 
+            height: calc(100vh - 180px);
+            position: fixed;
+            top: 118px; 
+            left: 5px; 
+            z-index: 1000;
+            margin-top: 20px; 
+            margin-bottom: 20px; 
+            padding-bottom: 35px; 
+            border-radius: 10px 0px 0px 10px;
+            
+        }
+        .main-content {
+            background-color: green;
+            width: 1600px;
+            height: calc(100vh - 180px);
+            position: fixed;
+            top: 118px;
+            left: 260px; 
+            z-index: 1000; 
+            margin-top: 20px; 
+            margin-bottom: 20px; 
+            padding-bottom: 35px; 
+            border-radius: 0px 10px 10px 0px;
+            margin-left: 50px;
+        }
+        .user {
+            background-color: yellow; 
+            border: 6px solid rgb(1, 88, 1); 
+            padding: 10px; 
+            border-radius: 10px; 
+            margin-top: 10px; 
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .user-pic {
+            margin: 0; 
+            border: none; 
+            width: 110px; 
+            height: 110px; 
+            border-radius: 10px; 
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .dashboard{
+            background-color: yellow; 
+            border: 6px solid rgb(1, 88, 1); 
+            padding: 10px; 
+            padding-left: 68px;
+            padding-right: 68px;
+            border-radius: 10px; 
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .dashboard:hover{
+            background-color: rgb(202, 202, 5);
+        }
+        .attendance{
+            background-color: rgb(222, 241, 222);
+            padding: 10px; 
+            padding-left: 65px;
+            padding-right: 65px;
+            border-radius: 10px; 
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .attendance:hover{
+            background-color: rgb(187, 187, 183);
+        }
+        .schedule{
+            background-color: rgb(222, 241, 222);
+            padding: 10px; 
+            padding-left: 77px;
+            padding-right: 77px;
+            border-radius: 10px; 
+            margin-top: 10px; 
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .schedule:hover{
+            background-color: rgb(187, 187, 183);
+        }
+        .payslip{
+            background-color: rgb(222, 241, 222);
+            padding: 10px;
+            padding-left: 91px;
+            padding-right: 91px;
+            border-radius: 10px;
+            margin-top: 10px; 
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .payslip:hover{
+            background-color: rgb(187, 187, 183);
+        }
+        .logout-button{
+            background-color:rgb(222, 241, 222);
+            margin-top: 360px;
+            margin-left: 11px;
+            padding: 8px;
+            border-radius: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .attendance,
+        .schedule,
+        .payslip,
+        .logout-button {
+            border: none;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        .payslip,
+        .attendance,
+        .schedule
+        {
+           margin-left: 17px;
+        }
+        .namebar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: yellow; 
+            border: 15px solid rgb(1, 88, 1); 
+            padding: 10px; 
+            border-radius: 10px; 
+            margin-top: 10px; 
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .name-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .name-info h1,
+        .name-info h3 {
+            margin: 0;
+        }
+
+        .name-design {
+            margin: 0; 
+            border: none; 
+            width: 120px; 
+            height: 120px; 
+            border-radius: 10px; 
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        h4{
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            font-size: 20px;
+            margin-left: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        table {
+            font-family: Arial, sans80erif;
+            border: 5px solid lightgray;
+            border-collapse: collapse;
+            width: 60%; 
+            margin-top: 70px;
+            background-color: white;
+            margin-left: 20px;
+            height: 350px;
+            float: left;
+            border:10px solid rgb(102, 187, 102); 
+        }
+        th, td {
+            padding: 4px 6px;
+            text-align: center;
+            font-size: 9px; 
+        }
+        th {
+            background-color: lightgray; 
+        }
+        tr:first-child th {
+            border-top: 1px solid lightgray; 
+        }
+        tr {
+            border-bottom: 5px solid lightgray; 
+        }
+        tr:last-child td {
+            border-bottom: none; 
+        }
+        .box-absent {
+            padding-right: 80px;
+            padding-left: 60px;
+            padding-top: 0px;
+            background-color: white; 
+            padding-bottom: 100px;
+            max-width: 80x;
+            border-radius: 10px; 
+            margin-top: 80px; 
+            float: left;
+            margin-left: 70px; 
+            border: 5px solid rgb(102, 187, 102); 
+        }
+        
+    </style>
+
+</head>
+<body>
+<!-- Main bar -->
+<div class="navbar">
+    <div class="nav-content">
+        <img class="logo" src="/The_Colegio_de_Montalban_Seal.png">
+        <div class="text-container">
+            <h1>COLEGIO DE MONTALBAN</h1>
+            <h3>PAYROLL SYSTEM</h3>
+        </div>
+    </div>
+
+    <div>
+        <a class="active" href="#"><i class="fas fa-home"></i></a>
+        <a href="#"><i class="fas fa-info-circle"></i></a>
+        <a href="#"><i class="fas fa-cog"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+    </div>
+</div>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="user">
+        <img class="user-pic" src="/Profile Icon.png">
+    </div>
+    <button class="dashboard">DASHBOARD</button>
+    <button class="attendance"><a href="/attendance.html">ATTENDANCE</a></button>
+    <button class="schedule"><a href="/schedule.html">SCHEDULE</a></button>
+    <button class="payslip"><a href="/payslip.html">PAYSLIP</a></button>
+    <div>
+        <button class="logout-button" onclick="window.location.href='logout.php'">Log Out</button>
+    </div>
+</div>
+
+<!--main body-->
+<div class="main-content">
+        <!-- Name bar -->
+        <div class="namebar">
+            <div class="name-info">
+                <h1>Hello, <?php echo $accountName; ?></h1>
+                <h3>Position</h3>
+                <input type="text" name="employeeNumber" disabled value="<?php echo $employeeNumber; ?>">
+            </div>
+            <img class="name-design" src="/DB Detail Icon (2).png">
+        </div>
+                
+    <h4>Attendance</h4>
+    <div class="attendance-shortcut">
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>In Date</th>
+                <th>In Time</th>
+                <th>Out Date</th>
+                <th>Out Time</th>
+                <th>Late</th>
+                <th>Absences</th>
+              </tr>
+              <tr>
+                <td>04/01/2024</td>
+                <td>04/01/2024</td>
+                <td>09:00 AM</td>
+                <td>04/01/2024</td>
+                <td>09:00 AM</td>
+                <td>00:00</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>04/02/2024</td>
+                <td>04/02/2024</td>
+                <td>09:00 AM</td>
+                <td>04/01/2024</td>
+                <td>09:00 AM</td>
+                <td>00:00</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>04/03/2024</td>
+                <td>04/03/2024</td>
+                <td>09:00 AM</td>
+                <td>04/01/2024</td>
+                <td>09:00 AM</td>
+                <td>00:00</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>04/04/2024</td>
+                <td>04/04/2024</td>
+                <td>09:00 AM</td>
+                <td>04/01/2024</td>
+                <td>09:00 AM</td>
+                <td>00:00</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>04/05/2024</td>
+                <td>04/05/2024</td>
+                <td>09:00 AM</td>
+                <td>04/01/2024</td>
+                 <td>09:00 AM</td>
+                <td>00:00</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>04/06/2024</td>
+                <td>04/06/2024</td>
+                <td>09:00 AM</td>
+                <td>04/01/2024</td>
+                <td>09:00 AM</td>
+                <td>00:00</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>04/07/2024</td>
+                <td>04/07/2024</td>
+                <td>00:00</td>
+                <td>09:00 AM</td>
+                <td>04/01/2024</td>
+                <td>00:00</td>
+                <td>0</td>
+              </tr>
+        </table>
+        <div class="box-absent">
+            <p>Absences</p>
+        </div>
+        <div class="box-absent">
+            <p>Absences</p>
+        </div>
+        <div class="box-absent">
+            <p>Absences</p>
+        </div>
+        <div class="box-absent">
+            <p>Absences</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

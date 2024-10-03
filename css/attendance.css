@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body, h1, p {
+    margin: 0;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: green;
+    margin: 0;
+    padding: 0;
+    height: 110px;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding-left: 20px;
+    padding-right: 20px; 
+   
+}
+
+.logo {
+    height: 100px;
+    width: 100px;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+}
+
+.text-container {
+    color: white;
+    margin-top: 30px;
+    margin-left: 20px; 
+}
+
+h1 {
+    font-size: 50px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+h3 {
+    font-size: 30px;
+    margin-top: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sidebar {
+    background-color: green;
+    width: 295px; 
+    height: calc(100vh - 180px);
+    position: fixed;
+    top: 118px; 
+    left: 5px; 
+    z-index: 1000;
+    margin-left: 8px;
+    margin-top: 5px; 
+    margin-bottom: 20px; 
+    padding-bottom: 35px; 
+    border-radius: 10px 0px 0px 10px;
+    
+}
+
+.main-content {
+    background-color: green;
+    width: 1095px;
+    height: calc(100vh - 180px);
+    position: fixed;
+    top: 118px;
+    left: 260px; 
+    z-index: 1000; 
+    margin-top: 5px; 
+    margin-bottom: 20px; 
+    padding-bottom: 35px; 
+    border-radius: 0px 10px 10px 0px;
+    margin-left: 40px;
+    padding-right: 20px;
+    width: calc(100% - 23.5%);
+   
+}
+
+.user {
+    background-color: yellow; 
+    border: 6px solid rgb(1, 88, 1); 
+    padding: 10px; 
+    border-radius: 10px; 
+    margin-top: 10px; 
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.user-pic {
+    margin: 0; 
+    border: none; 
+    width: 110px; 
+    height: 110px; 
+    border-radius: 10px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.logout-button{
+    background-color:rgb(222, 241, 222);
+    margin-top: 215px;
+    margin-left: 11px;
+    padding: 8px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.dashboard,
+.schedule,
+.payslip,
+.logout-button {
+    border: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.dashboard,
+.payslip,
+.schedule {
+    margin-left: 17px;
+}
+
+.attendance-shortcut {
+    width: 105.3%; 
+    height: 100%; 
+    overflow-y: auto; 
+}   
+.attendance-shortcut::-webkit-scrollbar {
+    display: none;
+}
+.attendance-shortcut table {
+    font-family: Arial, sans-serif;
+    border: 5px solid lightgray;
+    border-collapse: collapse;
+    width: 95%; 
+    background-color: white;
+    table-layout: fixed; 
+    margin-top: 20  px;
+}
+.attendance-shortcut th, 
+.attendance-shortcut td {
+    padding: 22px; 
+    text-align: center;
+    font-size: 14px; 
+    word-wrap: break-word;
+}
+
+.attendance-shortcut th {
+    background-color: lightgray; 
+}
+
+
+.attendance-shortcut tr:first-child th {
+    border-top: 1px solid lightgray; 
+}
+
+.attendance-shortcut tr {
+    border-bottom: 5px solid lightgray; 
+}
+
+.attendance-shortcut tr:last-child td {
+    border-bottom: none; 
+}
+
+p {
+    color: rgb(255, 255, 255) ;
+    font-size: 40px;
+    margin-top: 10px;
+    margin-left: 25px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 550;
+    font-style: normal; 
+}
+
+.logout-button:hover {
+    background-color: rgb(187, 187, 183);
+}
+
+.dashboard_logo,
+.attendance_logo,
+.schedule_logo,
+.payslip_logo {
+    width: 30px;
+    height: 30px ;
+}
+
+button.payslip {
+    display: flex;
+    align-items: center;
+    background-color: rgb(222, 241, 222);
+    padding: 10px; 
+    padding-left: 45px;
+    padding-right: 80px;
+    border-radius: 10px; 
+    margin-top: 10px;
+    margin-left: 14px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.payslip:hover {
+    background-color: rgb(187, 187, 183);
+}
+
+.payslip_logo {
+    margin-right: 32px; 
+}
+
+button.schedule {
+    display: flex;
+    align-items: center;
+    background-color: rgb(222, 241, 222);
+    padding: 10px; 
+    padding-left: 45px;
+    padding-right: 64px;
+    border-radius: 10px; 
+    margin-top: 10px;
+    margin-left: 14px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.schedule:hover {
+    background-color: rgb(187, 187, 183);
+}
+
+.schedule_logo {
+    margin-right: 20px; 
+}
+
+button.dashboard {
+    display: flex;
+    align-items: center;
+    background-color: rgb(222, 241, 222);
+    padding: 10px; 
+    padding-left: 49.4px;
+    padding-right: 54px;
+    border-radius: 10px; 
+    margin-top: 10px;
+    margin-left: 14px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.dashboard:hover {
+    background-color: rgb(187, 187, 183);
+}
+
+.dashboard_logo {
+    margin-right: 10px;
+}
+
+button.attendance {
+    display: flex;
+    align-items: center;
+    background-color: yellow;
+    border: 6px solid rgb(1, 88, 1);
+    padding: 10px;
+    padding-left: 45px;
+    padding-right: 45px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.attendance:hover {
+    background-color: rgb(202, 202, 5);
+}
+
+.attendance_logo {
+    margin-right: 10px;
+}
+.attendance-container{
+    margin-top: 11px;
+    border: 8px solid rgb(138, 199, 138);
+    border-radius: 10px;
+    width: 95%; 
+    height: calc(100% - 13%);; 
+    margin-left: 20px;
+}

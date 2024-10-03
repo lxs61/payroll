@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body, h1, p {
+    margin: 0;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: green;
+    margin: 0;
+    padding: 0;
+    height: 130px;
+}
+
+.logo {
+    margin-left: 5px;
+    margin-top: 5px;
+    height: 120px;
+    width: 120px;
+}
+
+.nav-content {
+    display: flex;
+}
+
+.text-container {
+    color: white;
+    margin-top: 20px;
+}
+
+h1 {
+    margin-left: 10px;
+    font-size: 50px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+h3 {
+    margin-left: 10px;
+    font-size: 30px;
+    margin-top: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.input-container {
+    margin-top: 35px;
+    background-color: green;
+    padding: 28px 130px; 
+    border-radius: 10px;
+    display: inline-block;
+    width: max-content;
+}
+
+.input-field {
+    padding: 12px;
+    width: 320px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    display: block; 
+}
+
+.password-field{
+    padding: 12px;
+    width: 320px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; 
+    display: block; 
+}
+
+label{
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.checkbox{
+    width: 20px;
+    height: 20px;
+    border: 5px solid green;
+    border-radius: 4px; 
+    margin-right: 10px;
+}
+
+.checkbox-wrapper {
+    margin-top: 20px;
+    margin-left: 80px;
+    display: flex; 
+    align-items: center; 
+}
+
+.loginbutton{
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: .50px solid #ccc;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 93px;
+    cursor: pointer;
+}

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Navigation Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-Py3y1jLhnElLa57x6tI6qcSQTRrUNFC82rbV+ZuTdIkXt6x3mLAWlmcaxTf2tuvo" crossorigin="anonymous">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        body, h1, p {
+            margin: 0;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: green;
+            margin: 0;
+            padding: 0;
+            height: 130px;
+            display: flex;
+            align-items: center; 
+            justify-content: space-between; 
+            padding-left: 20px;
+            padding-right: 20px; 
+        }
+
+        .logo {
+            height: 120px;
+            width: 120px;
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .text-container {
+            color: white;
+            margin-top: 30px;
+            margin-left: 20px; 
+        }
+
+        h1 {
+            font-size: 50px;
+            font-family: "Roboto", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        h3 {
+            font-size: 30px;
+            margin-top: 0;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        /* New CSS for the sidebar */
+        .sidebar {
+            background-color: green;
+            width: 295px; 
+            height: calc(100vh - 180px);
+            position: fixed;
+            top: 118px; 
+            left: 5px; 
+            z-index: 1000;
+            margin-left: 10px;
+            margin-top: 20px; 
+            margin-bottom: 20px; 
+            padding-bottom: 35px; 
+            border-radius: 10px 0px 0px 10px;
+            
+        }
+        .main-content {
+            background-color: green;
+            width: 77.5%px;
+            height: calc(100vh - 180px);
+            position: fixed;
+            top: 118px;
+            left: 260px; 
+            z-index: 1000; 
+            margin-top: 20px; 
+            margin-bottom: 30px; 
+            padding-bottom: 35px; 
+           
+        }
+        .user {
+            background-color: yellow; 
+            border: 6px solid rgb(1, 88, 1); 
+            padding: 10px; 
+            border-radius: 10px; 
+            margin-top: 10px; 
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .user-pic {
+            margin: 0; 
+            border: none; 
+            width: 110px; 
+            height: 110px; 
+            border-radius: 10px; 
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .dashboard{
+            background-color: rgb(222, 241, 222);
+            padding: 10px; 
+            padding-left: 68px;
+            padding-right: 68px;
+            border-radius: 10px; 
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .dashboard:hover{
+            background-color: rgb(187, 187, 183);
+        }
+        .attendance{
+            background-color: yellow; 
+            border: 6px solid rgb(1, 88, 1); 
+            padding: 10px; 
+            padding-left: 65px;
+            padding-right: 65px;
+            border-radius: 10px; 
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .attendance:hover{
+            background-color: rgb(202, 202, 5);
+        }
+        .schedule{
+            background-color: rgb(222, 241, 222);
+            padding: 10px; 
+            padding-left: 77px;
+            padding-right: 77px;
+            border-radius: 10px; 
+            margin-top: 10px; 
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .schedule:hover{
+            background-color: rgb(187, 187, 183);
+        }
+        .payslip{
+            background-color: rgb(222, 241, 222);
+            padding: 10px;
+            padding-left: 91px;
+            padding-right: 91px;
+            border-radius: 10px;
+            margin-top: 10px; 
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .payslip:hover{
+            background-color: rgb(187, 187, 183);
+        }
+        .logout-button{
+            background-color:rgb(222, 241, 222);
+            margin-top: 196px;
+            margin-left: 11px;
+            padding: 8px;
+            border-radius: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+                    }
+        .dashboard,
+        .schedule,
+        .payslip,
+        .logout-button {
+                border: none;
+            }
+            a{
+                color: black;
+                text-decoration: none;
+            }
+            .dashboard,
+            .payslip,
+            .schedule
+            {
+           margin-left: 17px;
+        }
+        .main-content {
+            background-color: green;
+            width: 1024px;
+            height: calc(100vh - 180px);
+            position: fixed;
+            top: 118px;
+            left: 260px; 
+            z-index: 1000; 
+            margin-top: 20px; 
+            margin-bottom: 20px; 
+            padding-bottom: 35px; 
+            border-radius: 0px 10px 10px 0px;
+            margin-left: 50px;
+
+        }
+        .attendance-shortcut {
+            width: 95%; /* Adjusted width */
+        }
+        .attendance-shortcut table {
+            font-family: Arial, sans-serif;
+            border: 5px solid lightgray;
+            border-collapse: collapse;
+            width: 100%; /* Adjusted width to fill the container */
+            margin-top: 10px;
+            background-color: white;
+            margin-left: 20px;
+            height: 350px;
+        }
+
+        .attendance-shortcut th, 
+        .attendance-shortcut td {
+            padding: 10px 6px; /* Adjusted padding */
+            text-align: center;
+            font-size: 9px; 
+        }
+
+        .attendance-shortcut th {
+            background-color: lightgray; 
+        }
+
+        .attendance-shortcut tr:first-child th {
+            border-top: 1px solid lightgray; 
+        }
+
+        .attendance-shortcut tr {
+            border-bottom: 5px solid lightgray; 
+        }
+
+        .attendance-shortcut tr:last-child td {
+            border-bottom: none; 
+        }
+        p {
+            color: rgb(255, 255, 255) ;
+            font-size: 40px;
+            margin-top: 10px;
+            margin-left: 25px;
+            font-family: "Roboto", sans-serif;
+            font-weight: 550;
+            font-style: normal; 
+        }
+    </style>
+    </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="user">
+    <img class="user-pic" src="/Profile Icon.png">
+   </div>
+   <!-- Dashboard Button -->
+   <form action="dashboard1.php" method="post">
+        <button class="dashboard" type="submit">DASHBOARD</button>
+    </form>
+
+    <!-- Attendance Button -->
+    <form action="" method="post">
+        <button class="attendance" type="submit">ATTENDANCE</button>
+    </form>
+
+    <!-- Schedule Button -->
+    <form action="schedule.php" method="post">
+        <button class="schedule" type="submit">SCHEDULE</button>
+    </form>
+
+    <!-- Payslip Button -->
+    <form action="payslip.php" method="post">
+        <button class="payslip" type="submit">PAYSLIP</button>
+    </form>
+   
+   
+<div>
+<button class="logout-button" onclick="window.location.href='logout.php'">Log Out</button>
+</div>
+</div>
+
+<!--main body-->
+<div class="main-content">
+
+</div>
+
+<!-- Main bar -->
+<div class="navbar">
+    <div class="nav-content">
+        <img class="logo" src="/The_Colegio_de_Montalban_Seal.png">
+        <div class="text-container">
+            <h1>COLEGIO DE MONTALBAN</h1>
+            <h3>PAYROLL SYSTEM</h3>
+        </div>
+    </div>
+    <div>
+        <a class="active" href="#"><i class="fas fa-home"></i></a>
+        <a href="#"><i class="fas fa-info-circle"></i></a>
+        <a href="#"><i class="fas fa-cog"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+    </div>
+</div>
+<div class="main-content">
+
+    <p>Attendance</p>
+    <div class="attendance-shortcut">
+    <table>
+        <tr>
+          <th>Date</th>
+          <th>In Date</th>
+          <th>In Time</th>
+          <th>Out Date</th>
+          <th>Out Time</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr> 
+      </table>
+      </div> 
+</div>
+</body>
+</html>

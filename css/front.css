@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body, h1, p {
+    margin: 0;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: green;
+    margin: 0;
+    padding: 0;
+    height: 130px;
+}
+
+.content {
+    margin-left:500px;
+    text-align: center;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.cdmlogo {
+    height: 150px;
+    width: 150px;
+}
+.text-container {
+    text-align: left;
+}
+h1{
+    color: green;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 100px;
+}
+h3{
+    color: green;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 26px; 
+    margin-top: 0; 
+}
+.loginbutton {
+    background-color: green; 
+    border: none;
+    color: white;
+    padding: 13px 55px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0; 
+    margin-top: 60px;
+    margin-left: 620px
+}
+a{
+color: white;  
+text-decoration: none;  
+}
