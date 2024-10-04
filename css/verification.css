@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+        body {
+            background: #e5ece4;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container{
+            background: #36b31d;
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .verification-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding-right: 75px;
+            position: relative;
+            margin: 10px;
+            border: 15px solid;
+            border-color: #f6fe01;
+        }
+        
+
+
+        .verification-container h2 {
+            font-family: "Playfair Display", serif;
+            font-style: italic;
+            font-weight: 400;
+            margin-bottom: 10px;
+            margin-left: 24px;
+        }
+
+        .verification-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            margin-left: 22px;
+            color: black;
+            cursor: pointer;
+            text-align: none;
+        }
+
+        .verification-container input[type="email"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .verification-container button {
+            background-color: rgb(241, 241, 144);
+            color: black;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .verification-container button:hover {
+            background-color: rgb(240, 240, 217);
+        }
+
+        .mail-logo {
+            width: 150px;
+            margin-bottom: 0px;
+            margin-left: 27px;
+        }
+
+        .copyright {
+            font-size: 15px;
+            color: #555;
+            margin-top: 20px;
+            margin-left: 35px;
+            margin-bottom: 0px;
+        }  

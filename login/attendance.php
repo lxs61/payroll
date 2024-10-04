@@ -93,33 +93,33 @@ h3 {
 
 .sidebar {
     background-color: green;
-    width: 295px; 
+    width: 295px;
     height: calc(100vh - 180px);
     position: fixed;
-    top: 118px; 
-    left: 5px; 
+    top: 118px;
+    left: 5px;
     z-index: 1000;
     margin-left: 8px;
-    margin-top: 5px; 
-    margin-bottom: 20px; 
-    padding-bottom: 35px; 
-    border-radius: 10px 0px 0px 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding-bottom: 35px;
+    border-radius: 10px 10px 10px 10px;
     
 }
 
 .main-content {
     background-color: green;
-    width: 1095px;
+    width: 1100px;
     height: calc(100vh - 180px);
     position: fixed;
     top: 118px;
-    left: 260px; 
-    z-index: 1000; 
-    margin-top: 5px; 
-    margin-bottom: 20px; 
-    padding-bottom: 35px; 
-    border-radius: 0px 10px 10px 0px;
-    margin-left: 40px;
+    left: 260px;
+    z-index: 1000;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding-bottom: 35px;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 60px;
     padding-right: 20px;
     width: calc(100% - 23.5%);
    
@@ -145,9 +145,9 @@ h3 {
     padding-bottom: 10px;
 }
 
-.logout-button{
-    background-color:rgb(222, 241, 222);
-    margin-top: 215px;
+.logout-button {
+    background-color: rgb(222, 241, 222);
+    margin-top: 260px;
     margin-left: 11px;
     padding: 8px;
     border-radius: 10px;
